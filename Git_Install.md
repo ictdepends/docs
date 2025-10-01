@@ -15,7 +15,15 @@ Settings:
 - Git Credential Manager
 - Choose first option
 
-# Git -Install - WSL Ubuntu 
+# Git - Install - WSL Ubuntu 
+## Git Clean before re-install
+Optional: Clean up old Git version - usefull to run before to avoid errors
+```bash
+sudo apt remove git
+sudo apt purge git
+sudo apt autoremove
+```
+## Git Install
 Run each command separately:
 ```bash
 sudo add-apt-repository ppa:git-core/ppa
@@ -26,13 +34,3 @@ sudo apt install git
 
 git --version
 ```
-Optional: Clean up old Git version
-```bash
-sudo apt remove git
-sudo apt purge git
-sudo apt autoremove
-```
-
-
-
-
