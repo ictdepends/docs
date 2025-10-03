@@ -1,1 +1,0 @@
-# Ubuntu_install_Lenovo_3rd_Sep_2025.md
