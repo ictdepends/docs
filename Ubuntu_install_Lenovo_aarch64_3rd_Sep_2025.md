@@ -13,6 +13,14 @@ https://ubuntu.com/download/server/arm
 
 Downloaded 25.04 as it is best for my modern pc, LTS version may not work correctly.
 
+Insert flash drive into machine, it reads a E.
+
+Open BalenaEtcher.
+
+Click on 'Flash from file', select ubuntu-25.04-live-server-arm64.iso from File Explorer, click open.
+
+Click 'Select target' on balenaEtcher
+
 
 
 
