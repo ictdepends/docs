@@ -1,4 +1,6 @@
-# Ubuntu_install_Lenovo_aarch64_3rd_Sep_2025.md
+# Ubuntu_install_Lenovo_aarch64_3rd_Sep_2025.mdwas still version 25
+
+Error on prevuious Ubuntu installation, : Ubuntu boot failed.
 
 First download 'Ubuntu Server', as there isn't yet an official Desktop for Snapdragon X Elite laptops.
 
@@ -23,9 +25,14 @@ Partition schome: GPT
 Target system: UEFI(non CSM)
 File System NTFS
 
-Selct Start
+Select Start
 
+When you see Ready in green close rufus and safely eject usb.
 
+Ignore below warning if you see it.
+"Problem ejecting Mass Storage Device warnig: Windows can't stop 'Volume' device because a program is still using it, Close any programms that might be using the device, and then try again later."
+
+insert USB restart computer pressing on pulsations F12 (no fn). You see EFI USB Device (Samsung Type_C).
 
 
 
