@@ -34,102 +34,56 @@ Ignore below warning if you see it.
 
 insert USB restart computer pressing on pulsations F12 (no fn). You see EFI USB Device (Samsung Type_C).
 
+---
+Ah — got it. I remember now: you said Rufus **only offers NTFS or exFAT**, not FAT32, because the Ubuntu 25.04 ISO is bigger than 4 GB. ✅
 
+That’s an important constraint. So we can **ignore FAT32** — the USB must be NTFS (Rufus handles UEFI:NTFS boot automatically).
 
-
-
-
+This narrows the problem: your USB is **UEFI:NTFS**, which usually works, but your Lenovo firmware is **failing to boot it**. So the systematic troubleshooting can focus on **firmware/BIOS and internal factors**, not the USB format.
 
 ---
 
-Open BalenaEtcher. - works on both Windows and Linux and it is an easy and stright forward solution.
+### Refined systematic approach given NTFS USB
 
-Click on 'Flash from file', select ubuntu-25.04-live-server-arm64.iso from File Explorer, click open.
+1. **USB verification**
 
-Click 'Select target' on balenaEtcher. Select1 D:,E: will get override into one by balena.
+   * Rufus says “Ready” → USB creation OK
+   * Optional: test USB on another PC (to confirm it boots)
 
-Flash!
+2. **BIOS / UEFI check**
 
-When done - safely remove USB.
+   * USB Boot: Enabled
+   * Fast Boot: Disabled
+   * Secure Boot: Try temporarily disabling if boot fails
+   * Use **Fn + F12** to access boot menu immediately after power-on
 
-## Install
-Perfect — now you’ve got **Ubuntu 25.04 on your USB stick** 🎉
-Now let’s get it installed properly next to Windows without breaking anything.
+3. **USB port**
 
----
+   * Prefer **USB-A** or direct ports — some USB-C ports are picky with UEFI:NTFS
 
-## 🔹 What you do next
+4. **BitLocker / encryption check**
 
-1. **Reboot your laptop** with the USB plugged in.
+   * Suspend BitLocker on Windows system drive → retry USB boot
 
-   * While it’s starting, press **F12** (on Lenovo) to open the **boot menu**.
-   * Select your **USB device**.
+5. **Boot attempt / error capture**
 
-2. **Start the Ubuntu installer**
-
-   * Choose **Install Ubuntu** (not Try Ubuntu).
-
-3. **When it asks about installation type**:
-
-   * Do **not** choose *Erase disk*.
-   * Instead choose **Something else**.
-
-4. **Find your old Ubuntu partition**
-
-   * You’ll see a list of partitions.
-   * Windows ones are usually **NTFS** or marked EFI → ❌ don’t touch them.
-   * Old Ubuntu is usually **ext4** (and maybe a swap).
-
-5. **Replace the old Ubuntu partition**
-
-   * Highlight the old **ext4** partition.
-   * Click **Change** → set:
-
-     * **Use as:** `Ext4 journaling file system`
-     * **Mount point:** `/`
-     * **Format?** ✅ Yes (so it clears the old broken Ubuntu).
-
-6. **Install the bootloader**
-
-   * Make sure it’s set to install GRUB into the **EFI partition** (Ubuntu should detect it automatically).
-   * This ensures you’ll get a menu at startup with both **Windows** and **Ubuntu**.
-
-7. **Proceed with installation**
-
-   * Ubuntu will now install fresh into that old partition.
-   * Windows partitions remain untouched.
+   * Note exact EFI failure message
+   * If EFI boot fails consistently → firmware incompatibility with NTFS USB is likely
 
 ---
 
-## 🔹 After installation
+💡 At this point, if USB won’t boot with NTFS on Lenovo:
 
-* On reboot, you’ll see the **GRUB menu** → choose Ubuntu or Windows.
-* If Ubuntu ever stops booting, you can always use the USB again to repair.
-* Keeping this USB around = your **recovery tool**.
-
----
-
-👉 Since your machine is Snapdragon X Elite (ARM), you picked **Ubuntu 25.04** → ✅ good choice for better hardware support.
-
-Do you want me to show you **exactly how the partitions will look in the installer** (so you can easily recognize which one is old Ubuntu and which one is Windows)?
+* Either use a **different USB stick** (some sticks are firmware picky), **or**
+* Use **Ventoy** or another tool that splits large ISOs for FAT32 automatically, making it compatible with all Lenovo UEFI firmwares.
 
 ---
 
-If I see only on F12 pushed repeatedly:
-"Please select boot device: 
+If you want, I can give you a **step-by-step method using Ventoy or Rufus to make a guaranteed bootable Ubuntu 25.04 USB for Lenovo X1**, **without needing FAT32**, so it will always appear and boot.
 
-ubuntu (S77LNFWC25018-SAMSUNG MZAL81T0HDLB-00BL2)
+Do you want me to do that?
 
-Windows Boot Manager (S77LNF1WC25018-SAMSUNG MZAL81T0HDL...)"
-
-Then restart pushing F2 repatedly to see boot(no FN needed).
-Check in Boot on left hand side that USB boot is enabled.
-
-Conclusion - do not use balenEtcher, use Rufus as it gives more control.
-
-
-
-
+---
 
 
 
