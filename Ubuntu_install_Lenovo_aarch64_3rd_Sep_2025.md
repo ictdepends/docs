@@ -11,6 +11,10 @@ sudo apt install ubuntu-desktop -y
 ## Download
 https://ubuntu.com/download/server/arm
 
+Downloaded 25.04 as it is best for my modern pc, LTS version may not work correctly.
+
+
+
 
 
 
