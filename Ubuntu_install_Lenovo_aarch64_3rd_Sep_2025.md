@@ -25,6 +25,68 @@ Flash!
 
 When done - safely remove USB.
 
+## Install
+Perfect — now you’ve got **Ubuntu 25.04 on your USB stick** 🎉
+Now let’s get it installed properly next to Windows without breaking anything.
+
+---
+
+## 🔹 What you do next
+
+1. **Reboot your laptop** with the USB plugged in.
+
+   * While it’s starting, press **F12** (on Lenovo) to open the **boot menu**.
+   * Select your **USB device**.
+
+2. **Start the Ubuntu installer**
+
+   * Choose **Install Ubuntu** (not Try Ubuntu).
+
+3. **When it asks about installation type**:
+
+   * Do **not** choose *Erase disk*.
+   * Instead choose **Something else**.
+
+4. **Find your old Ubuntu partition**
+
+   * You’ll see a list of partitions.
+   * Windows ones are usually **NTFS** or marked EFI → ❌ don’t touch them.
+   * Old Ubuntu is usually **ext4** (and maybe a swap).
+
+5. **Replace the old Ubuntu partition**
+
+   * Highlight the old **ext4** partition.
+   * Click **Change** → set:
+
+     * **Use as:** `Ext4 journaling file system`
+     * **Mount point:** `/`
+     * **Format?** ✅ Yes (so it clears the old broken Ubuntu).
+
+6. **Install the bootloader**
+
+   * Make sure it’s set to install GRUB into the **EFI partition** (Ubuntu should detect it automatically).
+   * This ensures you’ll get a menu at startup with both **Windows** and **Ubuntu**.
+
+7. **Proceed with installation**
+
+   * Ubuntu will now install fresh into that old partition.
+   * Windows partitions remain untouched.
+
+---
+
+## 🔹 After installation
+
+* On reboot, you’ll see the **GRUB menu** → choose Ubuntu or Windows.
+* If Ubuntu ever stops booting, you can always use the USB again to repair.
+* Keeping this USB around = your **recovery tool**.
+
+---
+
+👉 Since your machine is Snapdragon X Elite (ARM), you picked **Ubuntu 25.04** → ✅ good choice for better hardware support.
+
+Do you want me to show you **exactly how the partitions will look in the installer** (so you can easily recognize which one is old Ubuntu and which one is Windows)?
+
+
 
 
 
