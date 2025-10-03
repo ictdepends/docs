@@ -23,6 +23,8 @@ Click 'Select target' on balenaEtcher. Select1 D:,E: will get override into one 
 
 Flash!
 
+When done - safely remove USB.
+
 
 
 
