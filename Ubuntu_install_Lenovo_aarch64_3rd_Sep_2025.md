@@ -15,11 +15,15 @@ Downloaded 25.04 as it is best for my modern pc, LTS version may not work correc
 
 Insert flash drive into machine, it reads a E.
 
-Open BalenaEtcher.
+Open BalenaEtcher. - works on both Windows and Linux and it is an easy and stright forward solution.
 
 Click on 'Flash from file', select ubuntu-25.04-live-server-arm64.iso from File Explorer, click open.
 
-Click 'Select target' on balenaEtcher
+Click 'Select target' on balenaEtcher. Select1 D:,E: will get override into one by balena.
+
+Flash!
+
+
 
 
 
