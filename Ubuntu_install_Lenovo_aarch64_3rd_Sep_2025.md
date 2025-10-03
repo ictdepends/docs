@@ -15,6 +15,26 @@ Downloaded 25.04 as it is best for my modern pc, LTS version may not work correc
 
 Insert flash drive into machine, it reads a E.
 
+Conclusion from previous install - do not use balenEtcher, use Rufus as it gives more control.
+
+### Rufus
+Boot selection:UEFI:NTFS
+Partition schome: GPT
+Target system: UEFI(non CSM)
+File System NTFS
+
+Selct Start
+
+
+
+
+
+
+
+
+
+---
+
 Open BalenaEtcher. - works on both Windows and Linux and it is an easy and stright forward solution.
 
 Click on 'Flash from file', select ubuntu-25.04-live-server-arm64.iso from File Explorer, click open.
@@ -85,6 +105,20 @@ Now let’s get it installed properly next to Windows without breaking anything.
 👉 Since your machine is Snapdragon X Elite (ARM), you picked **Ubuntu 25.04** → ✅ good choice for better hardware support.
 
 Do you want me to show you **exactly how the partitions will look in the installer** (so you can easily recognize which one is old Ubuntu and which one is Windows)?
+
+---
+
+If I see only on F12 pushed repeatedly:
+"Please select boot device: 
+
+ubuntu (S77LNFWC25018-SAMSUNG MZAL81T0HDLB-00BL2)
+
+Windows Boot Manager (S77LNF1WC25018-SAMSUNG MZAL81T0HDL...)"
+
+Then restart pushing F2 repatedly to see boot(no FN needed).
+Check in Boot on left hand side that USB boot is enabled.
+
+Conclusion - do not use balenEtcher, use Rufus as it gives more control.
 
 
 
